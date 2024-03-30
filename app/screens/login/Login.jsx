@@ -1,27 +1,35 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Button, Image, ImageBackground, StyleSheet, TextInput, TouchableHighlight, View, Animation } from 'react-native';
+import { Text, ImageBackground, StyleSheet, TextInput, View, TouchableOpacity, Image } from 'react-native';
 
-import { globalStyles } from '../../utils/globalStyles';
-
-const Login = () => (
-    <View style={styles.container}>
-        <ImageBackground source={require("../../../assets/background.png")} resizeMode="stretch" style={styles.image}>
-            <View style={styles.header}>
-                <Image style={styles.light1} source={require("../../../assets/light.png")} />
-                <Image style={styles.light3} source={require("../../../assets/light.png")} />
-            </View>
-            <View style={globalStyles.form}>
-                <Animation>
+export default function Login() {
+    const navigate = useNavigation();
+    return (
+        <View style={styles.container}>
+            <ImageBackground style={styles.illustration} source={require("../../../assets/login.png")}>
+                <View style={styles.header}>
+                </View>
+                <View style={styles.form}>
                     <TextInput style={styles.textField} placeholder='username' />
-                </Animation>
-                <TextInput style={styles.textField} placeholder='password' textContentType='password' />
-                <TouchableHighlight style={styles.button} >
-                    <Button title='SIGN IN' />
-                </TouchableHighlight>
-            </View>
-        </ImageBackground>
-    </View>
-);
+                    <TextInput style={styles.textField} placeholder='password' textContentType='password' />
+                    <TouchableOpacity style={styles.button} onPress={() => navigate.push('Menu')} >
+                        <View>
+                            <Text style={styles.buttonText}>LOG IN</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.button, styles.google_btn]} onPress={() => {/* Handle Google sign-in */ }}>
+                        <View>
+                            <Text style={styles.buttonText}>SIGN IN WITH GOOGLE</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigate.push('SignUp')}>
+                        <Text style={styles.text}>Don't have an account? <Text style={styles.link}>Sign Up</Text></Text>
+                    </TouchableOpacity>
+                </View>
+            </ImageBackground>
+        </View>
+    );
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -29,24 +37,19 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        flexDirection: 'row',
-        gap: 20,
         paddingLeft: "10%",
         paddingRight: "10%",
     },
-    light1: {
-        flex: 1,
-        height: '80%',
-        resizeMode: 'contain',
+    form: {
+        flex: 1.5,
+        justifyContent: 'center',
+        justifyItems: 'center',
+        paddingLeft: "10%",
+        paddingRight: "5%",
+        gap: 12,
     },
-    light2: {
+    illustration: {
         flex: 1,
-        height: '70%',
-        resizeMode: 'contain',
-    },
-    light3: {
-        flex: 1,
-        height: '40%',
         resizeMode: 'contain',
     },
     image: {
@@ -57,14 +60,32 @@ const styles = StyleSheet.create({
         borderWidth: 0.2,
         borderRadius: 5,
         borderColor: 'gray',
-        fontSize: 18,
-        padding: 5,
-        paddingLeft: 15,
+        fontSize: 16,
+        padding: 7,
+        paddingLeft: 20,
+        backgroundColor: '#e4eaeb'
     },
     button: {
         borderRadius: 5,
-        marginTop: 10,
+        padding: 7,
+        borderWidth: 0.2,
+        borderRadius: 5,
+        backgroundColor: '#2888eb',
+    },
+    google_btn: {
+        backgroundColor: 'darkgray',
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
+        textAlign: 'center',
+    },
+    text: {
+        color: 'black',
+        textAlign: 'center'
+    },
+    link: {
+        color: 'blue'
     }
-});
 
-export default Login;
+});
