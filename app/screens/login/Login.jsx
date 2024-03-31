@@ -10,8 +10,8 @@ export default function Login() {
                 <View style={styles.header}>
                 </View>
                 <View style={styles.form}>
-                    <TextInput style={styles.textField} placeholder='username' />
-                    <TextInput style={styles.textField} placeholder='password' textContentType='password' />
+                    <TextInput style={styles.textField} placeholder='Enter username' required />
+                    <TextInput style={styles.textField} placeholder='Enter password' textContentType='password' />
                     <TouchableOpacity style={styles.button} onPress={() => navigate.push('Menu')} >
                         <View>
                             <Text style={styles.buttonText}>LOG IN</Text>
