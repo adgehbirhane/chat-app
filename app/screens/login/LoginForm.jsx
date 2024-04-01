@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Text, StyleSheet, TextInput, View, TouchableOpacity } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons'; // Import icons from Expo vector icons
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function LoginForm() {
     const navigate = useNavigation();
@@ -14,11 +14,11 @@ export default function LoginForm() {
     return (
         <View style={styles.form}>
             <View style={styles.inputContainer}>
-                <MaterialCommunityIcons name="account" size={24} color="black" style={styles.icon} />
+                {/* <MaterialCommunityIcons name="account" size={24} color="black" style={styles.icon} /> */}
                 <TextInput style={styles.textField} placeholder='Enter username' required />
             </View>
             <View style={styles.inputContainer}>
-                <MaterialCommunityIcons name="lock" size={24} color="black" style={styles.icon} />
+                {/* <MaterialCommunityIcons name="lock" size={24} color="black" style={styles.icon} /> */}
                 <TextInput
                     style={styles.textField}
                     placeholder='Enter password'

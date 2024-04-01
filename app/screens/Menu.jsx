@@ -33,7 +33,7 @@ export default function Menu({ navigation }) {
   };
 
   return (
-    <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
+    <Drawer.Navigator initialRouteName="Home" drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
         name="Home"
         component={Home}

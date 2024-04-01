@@ -7,7 +7,7 @@ const Tab = createMaterialTopTabNavigator();
 
 export default function Home() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Public">
       <Tab.Screen name="Public" component={Public} />
       <Tab.Screen name="Person" component={Personal} />
       <Tab.Screen name="Group" component={Group} />
