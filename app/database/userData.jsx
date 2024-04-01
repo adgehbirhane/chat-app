@@ -1,0 +1,146 @@
+export const userData = [
+    {
+        id: 1,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 2,
+        name: 'Abebe Kebede',
+        avatar: require('../../assets/background.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 3,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 4,
+        name: 'Abebe Kebede',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 5,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/background.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 6,
+        name: 'Abebe Kebede',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 7,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/light.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 8,
+        name: 'Abebe Kebede',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 9,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 10,
+        name: 'Abebe Kebede',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 11,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/background.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 12,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 13,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 14,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 15,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 16,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 17,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 18,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 19,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 20,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/light.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 21,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 22,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 23,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 24,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/background.png'),
+        newMessage: 'Hey there!',
+    }, {
+        id: 25,
+        name: 'Belay Birhanu',
+        avatar: require('../../assets/belay.png'),
+        newMessage: 'Hello, how are you?',
+    },
+    {
+        id: 26,
+        name: 'Balcha Debebe',
+        avatar: require('../../assets/profile_bg.png'),
+        newMessage: 'Hey there!',
+    },
+];

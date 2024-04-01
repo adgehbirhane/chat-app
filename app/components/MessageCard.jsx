@@ -3,11 +3,17 @@ import React from 'react'
 
 import { globalStyles } from '../utils/globalStyles'
 
-export default function MessageCard() {
+export default function MessageCard({ oneSMS }) {
     return (
-        <View style={globalStyles.card}>
-            <Text>MessageCard</Text>
-            <Text>Hello Bro Card we find out</Text>
+        <View>
+            <Text style={{ textAlign: 'center' }}>{oneSMS.createdAt}</Text>
+
+            {/* <Avatar /> */}
+            <View style={[globalStyles.card, oneSMS.sender == "mine" ? globalStyles.myMessage : globalStyles.othersMessage]}>
+                <Text>{oneSMS.name}</Text>
+                <Text>{oneSMS.message}</Text>
+            </View>
+            {/* <Avatar /> */}
         </View>
     )
 }

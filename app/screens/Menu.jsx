@@ -5,6 +5,7 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '
 import Home from './home/Home';
 import About from './about/About';
 import Profile from './profile/Profile';
+import BottomNav from './home/BottomNav';
 
 const Drawer = createDrawerNavigator();
 
@@ -35,9 +36,14 @@ export default function Menu({ navigation }) {
   return (
     <Drawer.Navigator initialRouteName="Home" drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
-        name="Home"
+        name="Home T_Nav"
         component={Home}
-        options={{ drawerLabel: 'Home' }}
+        options={{ drawerLabel: 'Top Nav' }}
+      />
+      <Drawer.Screen
+        name="Home B_Nav"
+        component={BottomNav}
+        options={{ drawerLabel: 'Bottom Nav' }}
       />
       <Drawer.Screen
         name="About"
