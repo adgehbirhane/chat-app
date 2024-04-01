@@ -2,7 +2,7 @@ export const userData = [
     {
         id: 1,
         name: 'Belay Birhanu',
-        username: 'user1',
+        username: 'admin1',
         password: '1234a',
         avatar: require('../../assets/profile_bg.png'),
         newMessage: 'Hello, how are you?',
