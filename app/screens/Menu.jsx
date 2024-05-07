@@ -1,11 +1,13 @@
 import React from 'react';
+import { StyleSheet } from "react-native";
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Home from './home/Home';
 import About from './about/About';
 import Profile from './profile/Profile';
-import BottomNav from './home/BottomNav';
+import CustomAvatar from '../components/CustomAvatar';
 
 const Drawer = createDrawerNavigator();
 
@@ -14,17 +16,20 @@ export default function Menu({ navigation }) {
     return (
       <DrawerContentScrollView {...props}>
         <View style={{ backgroundColor: 'teal' }}>
-          <Image source={require('../../assets/profile_bg.png')} style={{ marginTop: -50, height: 130, resizeMode: 'cover' }} />
+          <Image source={require('../../assets/profile_bg.png')} style={styles.bgImage} />
         </View>
         <View>
-          <Image source={require('../../assets/belay.png')} style={{ marginLeft: 10, width: 82, height: 80, borderRadius: 50, marginTop: -40 }} />
-          <View style={{ borderBottomWidth: 1, borderBottomColor: '#ccc', padding: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
+          <CustomAvatar />
+          <View style={styles.info}>
             <Text style={{ fontSize: 16 }}>Belay Birhanu</Text>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Login');
               }}>
-              <Text style={{ fontSize: 16, color: 'maroon', textAlign: 'right' }}>Logout</Text>
+              <View style={styles.logoutContainer}>
+                <MaterialCommunityIcons name="logout" size={20} color="maroon" />
+                <Text style={styles.logout}>Logout</Text>
+              </View>
             </TouchableOpacity>
           </View>
         </View>
@@ -36,25 +41,48 @@ export default function Menu({ navigation }) {
   return (
     <Drawer.Navigator initialRouteName="Home" drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
-        name="Home T_Nav"
+        name="Uni Connect"
         component={Home}
-        options={{ drawerLabel: 'Top Nav' }}
-      />
-      <Drawer.Screen
-        name="Home B_Nav"
-        component={BottomNav}
-        options={{ drawerLabel: 'Bottom Nav' }}
-      />
-      <Drawer.Screen
-        name="About"
-        component={About}
-        options={{ drawerLabel: 'About' }}
+        options={{ drawerLabel: 'Home', drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="home" color={color} size={size} /> }}
       />
       <Drawer.Screen
         name="Profile"
         component={Profile}
-        options={{ drawerLabel: 'Profile' }}
+        options={{ drawerLabel: 'Profile', drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="account" color={color} size={size} /> }}
+      />
+      <Drawer.Screen
+        name="About"
+        component={About}
+        options={{ drawerLabel: 'About', drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="information" color={color} size={size} /> }}
       />
     </Drawer.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#0c4a6e'
+  },
+  bgImage: {
+    marginTop: -50,
+    height: 130,
+    resizeMode: 'cover'
+  },
+  info: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    padding: 10,
+    paddingTop: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  logoutContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  logout: {
+    fontSize: 16,
+    color: 'maroon',
+    textAlign: 'right'
+  }
+});

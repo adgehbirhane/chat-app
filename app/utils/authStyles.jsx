@@ -1,56 +1,33 @@
 import { StyleSheet } from "react-native";
 
-export const globalStyles = StyleSheet.create({
+export const authStyles = StyleSheet.create({
     container: {
+        backgroundColor: '#191970',
+    },
+    illustration: {
         flex: 1,
-        backgroundColor: '#7dd3fc',
-    },
-    card: {
-        elevation: 1,
-        padding: 20,
-        margin: 10,
-        borderRadius: 20,
-    },
-    myMessage: {
-        backgroundColor: '#7c9af5',
-        alignSelf: 'flex-end',
-        borderBottomRightRadius: 0,
-    },
-    errorMessage: {
-        fontFamily: 'sans-serif',
-        fontSize: 14,
-        paddingLeft: 5
-    },
-    errorMessageContainer: {
-        backgroundColor: '#fecaca',
-        padding: 10,
-        borderRadius: 5,
-        alignItems: 'center',
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'row'
-    },
-    othersMessage: {
-        backgroundColor: '#f0f0f0',
-        alignSelf: 'flex-start',
-        borderBottomLeftRadius: 0,
-        width: "100%"
+        resizeMode: 'contain',
+        backgroundColor: '#addbff',
     },
     form: {
-        flex: 1.5,
+        flex: 3,
         justifyContent: 'center',
-        paddingLeft: "10%",
+        justifyItems: 'center',
+        paddingLeft: "5%",
         paddingRight: "5%",
         gap: 15,
+    },
+    header: {
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     inputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
     },
-    icon: {
-        marginLeft: 10,
-    },
     textField: {
+        flex: 1,
         borderWidth: 0.2,
         borderRadius: 5,
         borderColor: 'gray',
@@ -69,11 +46,10 @@ export const globalStyles = StyleSheet.create({
     },
     button: {
         borderRadius: 5,
-        padding: 10,
+        padding: 7,
         borderWidth: 0.2,
+        borderRadius: 5,
         backgroundColor: '#2888eb',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     google_btn: {
         backgroundColor: 'darkgray',
@@ -91,7 +67,8 @@ export const globalStyles = StyleSheet.create({
         color: 'blue',
         paddingTop: 5,
     },
-    logo: {
-        fontSize: 24,
+    logoImage: {
+        height: 100,
+        width: 200
     }
 });

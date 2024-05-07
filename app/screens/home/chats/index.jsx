@@ -1,6 +1,7 @@
 import Group from './Group';
 import Personal from './Personal';
-import Private from './Private';
+import AI from './AI';
 import Public from './Public';
+import ChatBody from './ChatBody';
 
-export { Group, Personal, Private, Public };
+export { Group, Personal, AI, Public, ChatBody };

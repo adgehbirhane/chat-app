@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { View, FlatList, Text, Image, TouchableOpacity } from 'react-native';
+import { FlatList, View, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { userData } from '../../../database/userData';
-import { messageData } from '../../../database/messageData';
-import MessageCard from '../../../components/MessageCard';
 
 export default function Public() {
 
-    const [sms, setSms] = useState(false);
+    const navigation = useNavigation();
 
     const renderItem = ({ item }) => (
         <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }} onPress={() => {
-            setSms(!sms)
+            navigation.navigate('chatBody')
         }}>
             <Image source={item.avatar} style={{ width: 50, height: 50, borderRadius: 25 }} />
             <View style={{ marginLeft: 10, width: '80%' }}>
@@ -25,20 +24,10 @@ export default function Public() {
     );
 
     return (
-        <View>
-            {sms ? (
-                <FlatList
-                    data={messageData}
-                    renderItem={({ item }) => <MessageCard oneSMS={item} />}
-                    keyExtractor={(item) => item.id.toString()}
-                />
-            ) : (
-                <FlatList
-                    data={userData}
-                    renderItem={renderItem}
-                    keyExtractor={item => item.id.toString()}
-                />
-            )}
-        </View>
+        <FlatList
+            data={userData}
+            renderItem={renderItem}
+            keyExtractor={item => item.id.toString()}
+        />
     );
 }

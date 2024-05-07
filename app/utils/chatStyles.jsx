@@ -1,28 +1,6 @@
-// MessageCard.js
+import { StyleSheet } from "react-native";
 
-import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
-
-import { globalStyles } from '../utils/globalStyles';
-
-export default function MessageCard({ oneSMS }) {
-    return (
-        <View style={[styles.container, oneSMS.sender === 'mine' ? styles.myMessageContainer : styles.othersMessageContainer]}>
-            {oneSMS.sender === 'other' && (
-                <Image source={require('../../assets/belay.png')} style={styles.avatarImage} />
-            )}
-            <View style={oneSMS.sender === 'mine' ? styles.mineMessageContainer : styles.otherMessageContainer}>
-                <Text style={styles.messageText}>{oneSMS.message}</Text>
-                <View style={styles.messageMetaData}>
-                    <Text style={styles.nameText}>{oneSMS.name}</Text>
-                    <Text style={styles.timeText}>{oneSMS.createdAt}</Text>
-                </View>
-            </View>
-        </View>
-    );
-}
-
-const styles = StyleSheet.create({
+export const chatStyles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'flex-end',
@@ -30,7 +8,7 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
     },
     messageMetaData: {
-        flexDirection: 'row',
+        // flexDirection: 'row',
         alignItems: 'flex-end',
         gap: 5
     },
