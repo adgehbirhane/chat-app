@@ -1,9 +1,5 @@
-// MessageCard.js
-
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-
-import { globalStyles } from '../utils/globalStyles';
 
 export default function MessageCard({ oneSMS }) {
     return (
