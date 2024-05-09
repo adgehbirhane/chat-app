@@ -1,16 +1,22 @@
 import * as React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import { Group, Personal, AI, Public } from './chats';
+import { Notice, News, AI, Chat } from './sections';
 
 const Tab = createMaterialTopTabNavigator();
 
 export default function Home() {
   return (
-    <Tab.Navigator initialRouteName="Public">
-      <Tab.Screen name="Public" component={Public} />
-      <Tab.Screen name="Group" component={Group} />
-      <Tab.Screen name="Private" component={Personal} />
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: 'gray',
+        tabBarStyle: { backgroundColor: '#212f4b' },
+        tabBarInactiveTintColor: 'lightgray'
+      }}
+    >
+      <Tab.Screen name="Public" component={Chat} />
+      <Tab.Screen name="Notice" component={Notice} />
+      <Tab.Screen name="News" component={News} />
       <Tab.Screen name="AI" component={AI} />
     </Tab.Navigator>
   );

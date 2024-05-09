@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -15,7 +15,7 @@ export default function Menu({ navigation }) {
   const CustomDrawerContent = (props) => {
     return (
       <DrawerContentScrollView {...props}>
-        <View style={{ backgroundColor: 'teal' }}>
+        <View>
           <Image source={require('../../assets/profile_bg.png')} style={styles.bgImage} />
         </View>
         <View>
@@ -39,30 +39,44 @@ export default function Menu({ navigation }) {
   };
 
   return (
-    <Drawer.Navigator initialRouteName="Home" drawerContent={props => <CustomDrawerContent {...props} />}>
+    <Drawer.Navigator
+      initialRouteName="Home"
+      drawerContent={props => <CustomDrawerContent style={{ backgroundColor: '#83a6b9' }} {...props} />}
+    >
       <Drawer.Screen
         name="Uni Connect"
         component={Home}
-        options={{ drawerLabel: 'Home', drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="home" color={color} size={size} /> }}
+        options={{
+          drawerLabel: 'Home',
+          drawerStyle: { elevation: 0 },
+          headerStyle: {
+            backgroundColor: '#212d45',
+          },
+          headerShadowVisible: false,
+          drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="home" color={color} size={size} />
+        }}
       />
       <Drawer.Screen
         name="Profile"
         component={Profile}
-        options={{ drawerLabel: 'Profile', drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="account" color={color} size={size} /> }}
+        options={{
+          drawerLabel: 'Profile',
+          drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="account" color={color} size={size} />
+        }}
       />
       <Drawer.Screen
         name="About"
         component={About}
-        options={{ drawerLabel: 'About', drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="information" color={color} size={size} /> }}
+        options={{
+          drawerLabel: 'About',
+          drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="information" color={color} size={size} />
+        }}
       />
     </Drawer.Navigator>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#0c4a6e'
-  },
   bgImage: {
     marginTop: -50,
     height: 130,

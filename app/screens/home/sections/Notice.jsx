@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList, View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { userData } from '../../../database/userData';
 
-export default function Public() {
+export default function Notice() {
 
     const navigation = useNavigation();
 
     const renderItem = ({ item }) => (
         <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }} onPress={() => {
-            navigation.navigate('chatBody')
+            navigation.navigate('Chat')
         }}>
             <Image source={item.avatar} style={{ width: 50, height: 50, borderRadius: 25 }} />
             <View style={{ marginLeft: 10, width: '80%' }}>

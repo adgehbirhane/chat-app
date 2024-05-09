@@ -8,7 +8,6 @@ export default function AIConversations({ oneSMS }) {
             <View style={oneSMS.sender === 'mine' ? chatStyles.mineMessageContainer : chatStyles.otherMessageContainer}>
                 <Text style={chatStyles.messageText}>{oneSMS.message}</Text>
                 <View style={chatStyles.messageMetaData}>
-                    <Text style={chatStyles.nameText}>{oneSMS.name}</Text>
                     <Text style={chatStyles.timeText}>{oneSMS.createdAt}</Text>
                 </View>
             </View>

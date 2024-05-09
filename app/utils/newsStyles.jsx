@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const chatStyles = StyleSheet.create({
+export const newsStyles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'flex-end',

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { FlatList, TextInput, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { FlatList, View, StyleSheet } from 'react-native';
 
 import { messageData } from '../../../database/messageData';
 import { AIConversations } from '../../../components';
+import CustomInput from '../../../components/CustomInput';
 
 export default function AI() {
     const [message, setMessage] = useState('');
@@ -20,21 +21,10 @@ export default function AI() {
                 keyExtractor={(item) => item.id.toString()}
                 contentContainerStyle={styles.flatListContainer}
             />
-            <View style={styles.inputContainer}>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Type your message..."
-                    value={message}
-                    onChangeText={(text) => setMessage(text)}
-                />
-                <TouchableOpacity onPress={handleMessageSend}>
-                    <Text style={styles.sendButton}>Send</Text>
-                </TouchableOpacity>
-            </View>
+            <CustomInput message={message} setMessage={setMessage} handleMessageSend={handleMessageSend} />
         </View>
     );
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -42,23 +32,27 @@ const styles = StyleSheet.create({
     },
     flatListContainer: {
         flexGrow: 1,
+        backgroundColor: '#1a2948',
+        color: 'white'
     },
     inputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
+        backgroundColor: '#212d45',
         paddingHorizontal: 16,
         paddingVertical: 8,
-        borderTopWidth: 1,
+        borderTopWidth: 0.5,
         borderTopColor: '#ccc',
     },
     input: {
         flex: 1,
         height: 40,
-        borderWidth: 1,
+        borderWidth: 0.2,
         borderColor: '#ccc',
-        borderRadius: 20,
+        borderRadius: 5,
         paddingHorizontal: 16,
         marginRight: 8,
+        color: 'white'
     },
     sendButton: {
         color: '#007AFF',

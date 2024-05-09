@@ -4,13 +4,13 @@ import { useNavigation } from '@react-navigation/native';
 
 import { userData } from '../../../database/userData';
 
-export default function Personal() {
+export default function Chat() {
 
     const navigation = useNavigation();
 
     const renderItem = ({ item }) => (
         <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }} onPress={() => {
-            navigation.navigate('chatBody')
+            navigation.navigate('Chat')
         }}>
             <Image source={item.avatar} style={{ width: 50, height: 50, borderRadius: 25 }} />
             <View style={{ marginLeft: 10, width: '80%' }}>
