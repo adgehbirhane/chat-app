@@ -6,6 +6,7 @@ import SignUp from './app/screens/signUp/SignUp';
 import Login from './app/screens/login/Login';
 import Menu from './app/screens/Menu';
 import { ChatBody } from './app/screens/home/sections';
+import Colors from './app/colors/Colors';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -13,10 +14,9 @@ const MyTheme = {
     ...DefaultTheme.colors,
     primary: 'teal',
     background: '#1a2948',
-    text: 'gray',
+    text: Colors.LIGHT_PRIMARY,
   },
 };
-
 
 const Stack = createNativeStackNavigator();
 

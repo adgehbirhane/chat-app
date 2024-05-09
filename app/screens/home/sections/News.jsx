@@ -1,9 +1,11 @@
 import React from 'react';
 import { FlatList, View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { newsStyles } from '../../../utils/newsStyles';
 
 import { userData } from '../../../database/userData';
+import { newsStyles } from '../../../utils/newsStyles';
+import { globalStyles } from '../../../utils/globalStyles';  
+import { CommentList } from '../../../components/CommentList';
 
 export default function News() {
 
@@ -11,14 +13,21 @@ export default function News() {
 
     const renderItem = ({ item }) => (
         <View style={newsStyles.container}>
-            {/* {oneSMS.sender === 'other' && (
-                <Image source={require('../../../../assets/belay.png')} style={newsStyles.avatarImage} />
-            )} */}
-            <View style={newsStyles.mineMessageContainer}>
-                <Text style={newsStyles.messageText}>Hello world</Text>
+            <View style={newsStyles.messageContainer}>
+                <View style={newsStyles.header}>
+                    <Image source={require('../../../../assets/belay.png')} style={newsStyles.avatarImage} />
+                    <View>
+                        <Text style={globalStyles.title}>Debre Birhan University</Text>
+                        <Text style={globalStyles.subTitle}>College of computing</Text>
+                    </View>
+                </View>
+                <View>
+                    <Text style={[newsStyles.nameText, { marginTop: 5 }]}> Message of the day</Text>
+                    <Text style={[globalStyles.subTitle, { marginLeft: 3, marginTop: -4 }]}>01:30 ago</Text>
+                </View>
                 <View style={newsStyles.messageMetaData}>
-                    <Text style={newsStyles.nameText}>my name</Text>
-                    <Text style={newsStyles.timeText}>12-25-96</Text>
+                    <Image source={require('../../../../assets/profile_bg.png')} style={globalStyles.postImage} />
+                        <CommentList oneMessage={item} /> 
                 </View>
             </View>
         </View>

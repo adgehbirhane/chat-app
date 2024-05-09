@@ -8,6 +8,7 @@ import Home from './home/Home';
 import About from './about/About';
 import Profile from './profile/Profile';
 import CustomAvatar from '../components/CustomAvatar';
+import Colors from '../colors/Colors'; 
 
 const Drawer = createDrawerNavigator();
 
@@ -21,13 +22,13 @@ export default function Menu({ navigation }) {
         <View>
           <CustomAvatar />
           <View style={styles.info}>
-            <Text style={{ fontSize: 16 }}>Belay Birhanu</Text>
+            <Text style={{ fontSize: 16, color: Colors.GRAY }}>Belay Birhanu</Text>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Login');
               }}>
               <View style={styles.logoutContainer}>
-                <MaterialCommunityIcons name="logout" size={20} color="maroon" />
+                <MaterialCommunityIcons name="logout" size={20} color={Colors.MAROON} />
                 <Text style={styles.logout}>Logout</Text>
               </View>
             </TouchableOpacity>
@@ -41,7 +42,7 @@ export default function Menu({ navigation }) {
   return (
     <Drawer.Navigator
       initialRouteName="Home"
-      drawerContent={props => <CustomDrawerContent style={{ backgroundColor: '#83a6b9' }} {...props} />}
+      drawerContent={props => <CustomDrawerContent style={{ backgroundColor: Colors.PRIMARY}} {...props} />}
     >
       <Drawer.Screen
         name="Uni Connect"
@@ -50,7 +51,7 @@ export default function Menu({ navigation }) {
           drawerLabel: 'Home',
           drawerStyle: { elevation: 0 },
           headerStyle: {
-            backgroundColor: '#212d45',
+            backgroundColor: Colors.PRIMARY,
           },
           headerShadowVisible: false,
           drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -60,6 +61,9 @@ export default function Menu({ navigation }) {
         name="Profile"
         component={Profile}
         options={{
+          headerStyle: {
+            backgroundColor: Colors.PRIMARY,
+          },
           drawerLabel: 'Profile',
           drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="account" color={color} size={size} />
         }}
@@ -68,6 +72,9 @@ export default function Menu({ navigation }) {
         name="About"
         component={About}
         options={{
+          headerStyle: {
+            backgroundColor: Colors.PRIMARY,
+          },
           drawerLabel: 'About',
           drawerIcon: ({ color, size }) => <MaterialCommunityIcons name="information" color={color} size={size} />
         }}

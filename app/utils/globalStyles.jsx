@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import Colors from "../colors/Colors";
 
 export const globalStyles = StyleSheet.create({
     container: {
@@ -93,5 +94,19 @@ export const globalStyles = StyleSheet.create({
     },
     logo: {
         fontSize: 24,
+    },
+    title: {
+        color: Colors.LIGHT_GRAY, 
+        fontSize: 14, 
+    },
+    subTitle: {
+        color: Colors.GRAY,
+        fontSize: 10, 
+    },
+    postImage: {
+        width: "98%",
+        height: 200,
+        borderRadius: 2,
+        margin: 5,
     }
-});
+})

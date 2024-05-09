@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextInput, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import Colors from '../colors/Colors';
 
 export default function CustomInput({ message, setMessage, handleMessageSend }) {
 
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         paddingVertical: 8,
         borderTopWidth: 0.5,
-        borderTopColor: '#ccc',
+        borderTopColor: Colors.DARK_GRAY,
     },
     input: {
         flex: 1,

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import { Notice, News, AI, Chat } from './sections';
+import Colors from '../../colors/Colors';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -10,8 +11,8 @@ export default function Home() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: 'gray',
-        tabBarStyle: { backgroundColor: '#212f4b' },
-        tabBarInactiveTintColor: 'lightgray'
+        tabBarStyle: { backgroundColor: Colors.SECONDARY },
+        tabBarInactiveTintColor: Colors.LIGHT_GRAY
       }}
     >
       <Tab.Screen name="Public" component={Chat} />
