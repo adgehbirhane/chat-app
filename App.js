@@ -7,14 +7,16 @@ import Login from './app/screens/login/Login';
 import Menu from './app/screens/Menu';
 import { ChatBody } from './app/screens/home/sections';
 import Colors from './app/colors/Colors';
+import NewsComment from './app/screens/home/sections/NewsComment';
+import UniProfile from './app/screens/home/sections/UniProfile';
 
 const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: 'teal',
-    background: '#1a2948',
-    text: Colors.LIGHT_PRIMARY,
+    primary: Colors.TEAL,
+    background: Colors.LIGHT_PRIMARY,
+    text: Colors.LIGHT_GRAY,
   },
 };
 
@@ -33,7 +35,27 @@ export default function App() {
           options={({ route }) => ({
             headerShown: route.name === 'Chat' ? true : false,
             headerStyle: {
-              backgroundColor: '#212d45',
+              backgroundColor: Colors.PRIMARY,
+            },
+          })}
+        />
+        <Stack.Screen
+          name="NewsComment"
+          component={NewsComment}
+          options={({ route }) => ({
+            headerShown: route.name === 'NewsComment' ? true : false,
+            headerStyle: {
+              backgroundColor: Colors.PRIMARY,
+            },
+          })}
+        />
+        <Stack.Screen
+          name="UniProfile"
+          component={UniProfile}
+          options={({ route }) => ({
+            headerShown: route.name === 'UniProfile' ? true : false,
+            headerStyle: {
+              backgroundColor: Colors.PRIMARY,
             },
           })}
         />

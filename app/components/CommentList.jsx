@@ -2,47 +2,13 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import { Share } from 'react-native';
 
 import Colors from '../colors/Colors';
 import { newsStyles } from '../utils/newsStyles';
 import CustomInput from './CustomInput';
-
-const comments = [  // this should be one property of the oneMessage which comes from parent...
-    {
-        id: 1,
-        content: 'We are here to investigate the your app progressstigate the your app progressstigate the your app progressstigate the your app progress.......... ..........well done We are here to investigate the you application progress... ........... ........well done.We are here to investigate the your application progress...... ................well done.We are here to investigate the your application progress........ ..............well done.',
-        sender: {
-            id: 1,
-            name: 'Abebe Kebede',
-            position: 'University admin',
-            url: 'https://th.bing.com/th/id/OIP.Ct06jffjAm_3UhSTGIgIHgHaHa?w=1099&h=1100&rs=1&pid=ImgDetMain',
-        },
-        createdAt: 'may 24, 2024',
-    },
-    {
-        id: 2,
-        content: 'To investigate the your app progres vestigate the your to investigate the your app progre....well done We are here to investigate the you application progress... ........... ........well done.We are here to investigate the your application progress...... ................well done.We are here to investigate the your application progress........ ..............well done.',
-        sender: {
-            id: 2,
-            name: 'Lala Debebe',
-            position: 'Head of department',
-            url: 'https://th.bing.com/th/id/OIP.AbGafkazjc_S1pZPh0B9cQHaIm?rs=1&pid=ImgDetMain',
-        },
-        createdAt: 'may 3, 2024',
-    },
-    {
-        id: 3,
-        content: 'Well done We are here to invesstigate the your app progresstigate the you application progress... ........... ........well done.We are here to investigate the your application progress...... ................well done.We are here to investigate the your application progress........ ..............well done.',
-        sender: {
-            id: 5,
-            name: 'Belay Birhane',
-            position: 'Student',
-            url: 'https://th.bing.com/th/id/R.d144faafc0172b9a2d9641c05670ec37?rik=bVWekybgw6CgFw&pid=ImgRaw&r=0',
-        },
-        createdAt: 'may 4, 2024',
-    }
-];
+import { comments } from '../database/messageData';
 
 export const CommentList = ({ oneMessage }) => {
 
@@ -50,6 +16,7 @@ export const CommentList = ({ oneMessage }) => {
     const [viewComments, setViewComments] = useState(false);
 
     const [message, setMessage] = useState('');
+    const navigation = useNavigation();
 
     const handleMessageSend = () => {
         console.log('Sending message:', message);
@@ -137,6 +104,10 @@ export const CommentList = ({ oneMessage }) => {
             )
             }
             <CustomInput message={message} setMessage={setMessage} handleMessageSend={handleMessageSend} />
+            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', gap: 2 }} onPress={() => navigation.navigate('NewsComment')}>
+                <Text style={[newsStyles.nameText, { color: Colors.DARK_BLUE }]}> View all Comments </Text>
+                <Ionicons name="arrow-forward-outline" size={15} color={Colors.DARK_BLUE} />
+            </TouchableOpacity>
         </View >
     );
 };

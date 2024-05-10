@@ -78,8 +78,7 @@ export default function Login() {
                             />
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={authStyles.button} onPress={() => navigate.push('Menu')}>
-                        {/* onPress={handleLogin} > */}
+                    <TouchableOpacity style={authStyles.button} onPress={handleLogin} >  
                         <View>
                             <Text style={authStyles.buttonText}>LOG IN</Text>
                         </View>

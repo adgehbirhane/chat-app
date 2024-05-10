@@ -9,5 +9,7 @@ export default {
     YELLOW: '#b2b638',
     DARK_GRAY: '#615e5e',
     LIGHT_PRIMARY: '#1a2948',
-    BLUE_LIGHT: "#22364e"
+    BLUE_LIGHT: "#22364e",
+    TEAL: 'teal',
+    DARK_BLUE: '#363699'
 }

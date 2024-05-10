@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
-
+import Colors from '../colors/Colors'
 export const authStyles = StyleSheet.create({
     container: {
-        backgroundColor: '#191970',
+        backgroundColor: Colors.PRIMARY,
     },
     illustration: {
         flex: 1,
         resizeMode: 'contain',
-        backgroundColor: '#addbff',
+        backgroundColor:  Colors.PRIMARY,
     },
     form: {
         flex: 3,
@@ -30,11 +30,11 @@ export const authStyles = StyleSheet.create({
         flex: 1,
         borderWidth: 0.2,
         borderRadius: 5,
-        borderColor: 'gray',
+        borderColor:    Colors.GRAY,
         fontSize: 16,
         padding: 7,
         paddingLeft: 20,
-        backgroundColor: '#e4eaeb'
+        backgroundColor:  Colors.LIGHT_GRAY,
     },
     eyeIcon: {
         position: 'absolute',
@@ -42,29 +42,29 @@ export const authStyles = StyleSheet.create({
         top: '50%',
         paddingHorizontal: 5,
         transform: [{ translateY: -10 }],
-        backgroundColor: '#e4eaeb'
+        backgroundColor:  Colors.LIGHT_GRAY,
     },
     button: {
         borderRadius: 5,
         padding: 7,
         borderWidth: 0.2,
         borderRadius: 5,
-        backgroundColor: '#2888eb',
+        backgroundColor:  Colors.BLUE,
     },
     google_btn: {
-        backgroundColor: 'darkgray',
+        backgroundColor:  Colors.DARK_GRAY,
     },
     buttonText: {
-        color: 'white',
+        color: Colors.LIGHT_GRAY,
         fontSize: 16,
         textAlign: 'center',
     },
     text: {
-        color: 'black',
+        color: Colors.LIGHT_GRAY,
         textAlign: 'center'
     },
     link: {
-        color: 'blue',
+        color: Colors.BLUE,
         paddingTop: 5,
     },
     logoImage: {

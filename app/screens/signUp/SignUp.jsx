@@ -13,6 +13,7 @@ export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -35,6 +36,7 @@ export default function SignUp() {
         setIsError(false);
         setPassword('');
         setUsername('');
+        setEmail('');
       } else {
         setIsError(true);
         setError('Invalid Credentials');
@@ -43,6 +45,7 @@ export default function SignUp() {
       setPassword('');
       setConfirmPassword('');
       setUsername('');
+      setEmail('');
     } else {
       setIsError(true);
       setError('Confirmation password incorrect');
@@ -76,6 +79,13 @@ export default function SignUp() {
               value={username}
               onChangeText={setUsername}
               placeholder='Enter username'
+              required />
+          </View>
+          <View style={authStyles.inputContainer}>
+            <TextInput style={authStyles.textField}
+              value={email}
+              onChangeText={setEmail}
+              placeholder='Email'
               required />
           </View>
           <View style={authStyles.inputContainer}>
