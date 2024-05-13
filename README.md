@@ -1,1 +1,1 @@
-# home-service-ap
+# Chat app for Ethiopian Universities
