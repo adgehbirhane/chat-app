@@ -1,1 +1,1 @@
-# Chat app for Ethiopian Universities
+# Chat app
